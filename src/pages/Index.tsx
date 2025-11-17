@@ -141,7 +141,7 @@ const Index = () => {
                 <Icon name="FileSearch" size={20} className="mr-2" />
                 Изучить проекты
               </Button>
-              <Button size="lg" variant="outline" className="bg-white hover:bg-white/90 hover:scale-105 transition-transform">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 hover:scale-105 transition-transform">
                 <Icon name="Map" size={20} className="mr-2" />
                 Смотреть карту
               </Button>
@@ -255,10 +255,12 @@ const Index = () => {
                       <span>Инвестиции: {project.investment}</span>
                     </div>
                   </div>
-                  <Button className="w-full group-hover:bg-accent transition-colors">
-                    Подробнее
-                    <Icon name="ArrowRight" size={16} className="ml-2" />
-                  </Button>
+                  <Link to={`/project/${project.id}`} className="block">
+                    <Button className="w-full group-hover:bg-accent transition-colors">
+                      Подробнее
+                      <Icon name="ArrowRight" size={16} className="ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -278,7 +280,7 @@ const Index = () => {
             <CardContent className="p-0">
               <div className="relative h-[600px] bg-muted">
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=83.763600%2C53.360600&z=12&l=map"
+                  src="https://yandex.ru/map-widget/v1/?ll=83.763600%2C53.360600&z=12&l=map&pt=83.7636,53.3606,pm2rdm~83.7765,53.3486,pm2gnm~83.7456,53.3556,pm2blm"
                   width="100%"
                   height="600"
                   frameBorder="0"
